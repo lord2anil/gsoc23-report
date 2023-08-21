@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSoC Project Final Report</title>
+    <!-- Link to Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        /* Center content vertically */
+        body, html {
+            height: 100%;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+            /* align-items: center; */
+            /* height: 100%; */
+            width: 50%;
+            /* border-radius: 10px; */
+            background-color: rgb(242, 249, 248);
+
+        }
+          /* Social media icons */
+          .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+            color: #333;
+        }
+
+        .social-icons a:hover {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div  style=" background-color: rgb(222, 229, 228);" >
+    <nav class="navbar navbar-light"   >
+        <div class="container-fluid" >
+          <a class="navbar-brand align-self-center justify-content-center d-block  " href="#">
+            <img src="https://summerofcode.withgoogle.com/assets/media/logo.svg" alt="" width="100%" height="100%" class="d-inline-block align-text-top">
+            
+          </a>
+          <h4  style="margin-right: 45%;" >GSoC Project Final Report</h4>
+        </div>
+      </nav>
+
+    </div>
+    <div class="container ">
+    
+        
+        <h2>Project Details</h2>
+        <p><strong>Project Title:</strong>   Develop Performance Farm Benchmarks and Website (2023)</p>
+        <p><strong>Student:</strong> Anil Rundla</p>
+        <p><strong>Mentor(s):</strong> Ilaria Battiston, sfrost</p>
+        <p><strong>Organization:</strong> PostgreSQL</p>
+        <hr>
+
+        <p>Live server address: <a href="http://140.211.168.145/" target="_blank">http://140.211.168.145/</a></p>
+
+        <p>Github repo for the client: <a href="https://github.com/PGPerfFarm/pgperffarm/tree/master" target="_blank">https://github.com/PGPerfFarm/pgperffarm/tree/master</a></p>
+        
+        <p>Github repo for the Back-end: <a href="https://github.com/PGPerfFarm/pgperffarm_server" target="_blank">https://github.com/PGPerfFarm/pgperffarm_server</a></p>
+        <hr>
+        <h2 id="pgperffarm---google-summer-of-code-2022">Pgperffarm</h2>
+
+        <p>PostgreSQL is an excellent and progressively refined database management system. To test its performance, the Postgres Performance Farm (short for Pgperffarm) was born as a result of the efforts of GSOC developers in previous years. In order to improve Pgperffarm even more, this year the GSOC project was planned to be improved on the following aspects:</p>
+
+        <ul>
+        <li>Enhance the performance farm by generating and collecting EXPLAIN query plans to help users understand query performance.
+           
+             </li>
+        <li>Add custom queries to the benchmark suite, allowing users to test specific use cases.</li>
+        <li> Improve UI of pgperffarm_server </li>
+        
+    
+        </ul>
+
+        <h4>As a result of the project, the following features were implemented:</h4>
+         
+        <h5><Strong>Client -:</Strong></h5>
+        <p>The Client was a Python script that clones the PostgreSQL source code from a specific branch and creates a temporary PostgreSQL cluster. Then runs pgbench and collect the results and finally uploads the results to the backend.</p>
+        <br>
+        
+        <P>
+         The client Script is modified to run the custom queries and collect the explain plans and upload them to the backend.
+         Eaplain plans are add in TPC-H benchmark. By generating and collecting EXPLAIN query plans, the performance farm can help users better understand the performance characteristics of their queries. This can be particularly helpful for identifying slow or inefficient queries and helping users optimize their database performance.
+        </P>
+
+        <h5><Strong>Server -:</Strong></h5>
+
+        <p>
+        The server is a Django application that provides a REST API to store and retrieve the results of the benchmarks. The server also provides a web interface to visualize the results.
+        </p>
+   <br>
+   <p>
+    The server is modified to store the explain plans and display them in the UI. The new Models is added to store the explaine plans and the new API is added to upload the explain plans to the server.
+    Also the new Models is add for pgbench custom queries results and the new API is added to upload the custom queries results to the server.
+    From server we can download the explain plans and pgbench custom queries  configurations.
+
+   </p>
+
+    <h5>Contact me</h5>
+   <div class="social-icons">
+    <a href="https://www.linkedin.com/in/anil-rundla-311a7121b" target="_blank" rel="noopener noreferrer">
+        <img src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg" alt="LinkedIn">
+    </a>
+    <a href="https://github.com/lord2anil" target="_blank" rel="noopener noreferrer">
+        <img  width="65" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub">
+    </a>
+    <br>
+    <br>
+</div>
+         
+        
+      
+    </div>
+    <!-- Link to Bootstrap JS and other scripts if needed -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
